@@ -1,0 +1,274 @@
+.community-forum {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.forum-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+}
+
+.forum-sidebar {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.forum-categories h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.forum-categories ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.forum-categories li {
+    margin-bottom: 10px;
+}
+
+.forum-categories li a {
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.forum-categories li a:hover {
+    background-color: #f1f1f1;
+}
+
+.forum-categories li.active a {
+    background-color: #2980b9;
+    color: white;
+}
+
+.new-post-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-post-button:hover {
+    background-color: #2ecc71;
+}
+
+.forum-posts {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.post-search {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post-search input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.posts-list {
+    margin-bottom: 20px;
+}
+
+.post-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+}
+
+.post-item:hover {
+    background-color: #f9f9f9;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.post-author {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.post-category {
+    font-size: 0.8rem;
+    background-color: #f1f1f1;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #555;
+}
+
+.post-date {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.post-content {
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.post-comments, .post-likes {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.post-footer i {
+    margin-right: 5px;
+}
+
+.forum-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination-button.active {
+    background-color: #2980b9;
+    color: white;
+    border-color: #2980b9;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#new-post-form .form-group {
+    margin-bottom: 15px;
+}
+
+#new-post-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#new-post-form input,
+#new-post-form select,
+#new-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#new-post-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .forum-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .forum-sidebar {
+        order: 2;
+    }
+}

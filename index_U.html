@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurveyOn - Kiếm tiền từ khảo sát trực tuyến</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Survey<span>On</span></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="diendan.html">Diễn đàn</a></li>
+                    <li><a href="khaosat.html">Khảo sát</a></li>
+                    <li><a href="#dd">Đổi điểm</a></li>
+                    <li><a href="#ct">Cách thức hoạt động</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#lh">Liên hệ</a></li>
+                    
+                </ul>
+            </nav>
+                <div class="auth-buttons">
+                <div class="user-avatar" style="display:flex;align-items:center;gap:10px;">
+                    <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
+                    <span style="font-weight:500;">Xin chào... !</span>
+                </div>
+                <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
+                <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Kiếm tiền bằng cách chia sẻ ý kiến của bạn</h1>
+            <p>Tham gia SurveyOn và nhận thưởng cho mỗi khảo sát bạn hoàn thành. Dễ dàng, nhanh chóng và miễn phí!</p>
+            <a href="khaosat.html" class="cta-button">Thực hiện khảo sát ngay</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tại sao chọn SurveyOn?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Kiếm tiền thật</h3>
+                    <p>Nhận điểm thưởng cho mỗi khảo sát bạn hoàn thành. Đổi điểm thưởng sang tiền mặt, thẻ quà tặng hoặc quyên góp cho các tổ chức từ thiện.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>An toàn và bảo mật</h3>
+                    <p>Thông tin cá nhân của bạn luôn được bảo vệ. Chúng tôi không bao giờ chia sẻ dữ liệu của bạn với bên thứ ba.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Khảo sát mọi lúc mọi nơi</h3>
+                    <p>Tham gia khảo sát trên máy tính hoặc thiết bị di động của bạn, bất cứ lúc nào, bất cứ nơi đâu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cách thức hoạt động</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Tạo tài khoản</h3>
+                    <p>Đăng ký miễn phí và hoàn thành hồ sơ của bạn để chúng tôi có thể tìm các khảo sát phù hợp với bạn.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Tham gia khảo sát</h3>
+                    <p>Nhận thông báo khi có khảo sát mới và hoàn thành chúng để kiếm điểm thưởng.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Nhận phần thưởng hoặc quyên góp</h3>
+                    <p>Đổi điểm thưởng của bạn sang tiền mặt, thẻ quà tặng hoặc quyên góp cho các tổ chức từ thiện mà bạn quan tâm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards & Donation Section -->
+    <section id="dd" class="rewards-donation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Đổi điểm thưởng</h2>
+            </div>
+            
+             <div class="rewards-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="all-rewards">Tất cả</button>
+                    <button class="tab-btn" data-tab="gift-cards">Thẻ quà tặng</button>
+                    <button class="tab-btn" data-tab="sweepstakes">Quay số trúng thưởng</button>
+                    <button class="tab-btn" data-tab="donations">Quyên góp</button>
+                    <button class="tab-btn" data-tab="subscriptions">Dịch vụ đăng ký</button>
+                </div>
+                
+                <div class="rewards-search">
+                    <input type="text" placeholder="Tìm kiếm phần thưởng...">
+                    <button class="search-btn">Tìm</button>
+                </div>
+                
+                <div class="rewards-grid">
+                    <div class="reward-card">
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ quà tặng" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Thẻ quà tặng Shopee 50K</h3>
+                            <div class="reward-points">5,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-card">
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ quà tặng" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Thẻ quà tặng Lazada 100K</h3>
+                            <div class="reward-points">10,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-card featured">
+                        <div class="reward-tag">Hot</div>
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Microsoft 365" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Microsoft 365 (1 tháng)</h3>
+                            <div class="reward-points">12,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-card donation">
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Quyên góp" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Quyên góp cho UNICEF</h3>
+                            <div class="reward-points">Từ 1,000 điểm</div>
+                            <button class="redeem-btn">Quyên góp</button>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-card">
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ cào" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Thẻ cào điện thoại 20K</h3>
+                            <div class="reward-points">2,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    
+                    <div class="reward-card sweepstakes">
+                        <div class="reward-image">
+                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Xbox" />
+                        </div>
+                        <div class="reward-info">
+                            <h3>Cơ hội trúng Xbox Series X</h3>
+                            <div class="reward-points">500 điểm/1 lượt</div>
+                            <button class="redeem-btn">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rewards-pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">></button>
+                </div>
+            </div>
+            
+            <div class="rewards-status">
+                <div class="status-card">
+                    <h3>Điểm khả dụng</h3>
+                    <div class="points-display">2,450</div>
+                    <p>Điểm sẽ hết hạn: <span>0</span></p>
+                </div>
+                
+                <div class="status-card">
+                    <h3>Cấp bậc thành viên</h3>
+                    <div class="level-display">Bạc</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <p>3,550 điểm nữa để lên Vàng</p>
+                </div>
+                
+                <div class="status-card">
+                    <h3>Hoạt động gần đây</h3>
+                    <ul class="activity-list">
+                        <li><span>+50</span> Hoàn thành khảo sát "Thói quen mua sắm"</li>
+                        <li><span>+100</span> Khảo sát hàng tuần</li>
+                        <li><span>-1000</span> Đổi thẻ quà tặng</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="donation-impact">
+                <h3>Tác động từ quyên góp</h3>
+                <div class="impact-stats">
+                    <div class="impact-item">
+                        <div class="impact-number">1.2M</div>
+                        <p>Tổng điểm đã quyên góp</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">56</div>
+                        <p>Dự án được hỗ trợ</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">12K</div>
+                        <p>Thành viên tham gia quyên góp</p>
+                    </div>
+                </div>
+                <a href="#" class="impact-report-link">Xem báo cáo tác động đầy đủ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Earn Section -->
+    <section id="ct" class="ways-to-earn">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cách kiếm điểm</h2>
+            </div>
+            
+            <div class="earn-methods-grid">
+                <div class="earn-method-card">
+                    <div class="earn-method-icon">📝</div>
+                    <h3>Khảo sát</h3>
+                    <p><strong>100-500 điểm</strong> cho mỗi khảo sát hoàn thành, tùy thuộc vào độ dài và độ phức tạp</p>
+                </div>
+                
+                <div class="earn-method-card">
+                    <div class="earn-method-icon">📱</div>
+                    <h3>Đăng nhập hàng ngày</h3>
+                    <p><strong>50 điểm</strong> mỗi ngày khi đăng nhập vào ứng dụng hoặc trang web</p>
+                </div>
+                
+                <div class="earn-method-card">
+                    <div class="earn-method-icon">👥</div>
+                    <h3>Giới thiệu bạn bè</h3>
+                    <p><strong>1,000 điểm</strong> cho mỗi người bạn giới thiệu tham gia và hoàn thành khảo sát đầu tiên</p>
+                </div>
+                
+                <div class="earn-method-card">
+                    <div class="earn-method-icon">🔍</div>
+                    <h3>Tìm kiếm hàng ngày</h3>
+                    <p><strong>10 điểm</strong> cho mỗi lượt tìm kiếm, tối đa 50 điểm mỗi ngày</p>
+                </div>
+                
+                <div class="earn-method-card">
+                    <div class="earn-method-icon">🎮</div>
+                    <h3>Trò chơi nhỏ</h3>
+                    <p><strong>5-20 điểm</strong> cho mỗi lượt chơi các trò chơi nhỏ trên trang web</p>
+                </div>
+                
+                <div class="earn-method-card featured-earn">
+                    <div class="earn-method-icon">⭐</div>
+                    <h3>Thử thách hàng tuần</h3>
+                    <p><strong>Tối đa 1,000 điểm</strong> khi hoàn thành các mục tiêu hàng tuần</p>
+                    <div class="earn-badge">Hot</div>
+                </div>
+            </div>
+            
+            <div class="level-benefits">
+                <h3>Đặc quyền theo cấp bậc thành viên</h3>
+                
+                <div class="level-table">
+                    <div class="level-header">
+                        <div class="level-cell">Cấp bậc</div>
+                        <div class="level-cell">Yêu cầu</div>
+                        <div class="level-cell">Đặc quyền</div>
+                    </div>
+                    
+                    <div class="level-row">
+                        <div class="level-cell level-name bronze">Đồng</div>
+                        <div class="level-cell">Mới gia nhập</div>
+                        <div class="level-cell">
+                            <ul>
+                                <li>Truy cập khảo sát cơ bản</li>
+                                <li>Rút điểm cơ bản</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level-row">
+                        <div class="level-cell level-name silver">Bạc</div>
+                        <div class="level-cell">5,000 điểm/năm</div>
+                        <div class="level-cell">
+                            <ul>
+                                <li>Tất cả đặc quyền Đồng</li>
+                                <li>+10% điểm thưởng</li>
+                                <li>Ưu tiên truy cập khảo sát mới</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level-row">
+                        <div class="level-cell level-name gold">Vàng</div>
+                        <div class="level-cell">10,000 điểm/năm</div>
+                        <div class="level-cell">
+                            <ul>
+                                <li>Tất cả đặc quyền Bạc</li>
+                                <li>+25% điểm thưởng</li>
+                                <li>Khảo sát độc quyền</li>
+                                <li>Ưu đãi đổi thưởng đặc biệt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ý kiến của thành viên</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Tôi đã kiếm được hơn 2 triệu đồng trong 3 tháng qua chỉ bằng cách dành 15 phút mỗi ngày để làm khảo sát. SurveyOn là cách tuyệt vời để kiếm thêm thu nhập!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="người dùng" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Nguyễn Văn A</h4>
+                            <p>Thành viên từ 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Điều tôi thích nhất về SurveyOn không chỉ là khả năng kiếm thêm thu nhập mà còn là lựa chọn quyên góp điểm cho các tổ chức từ thiện. Tôi đã quyên góp điểm thưởng để hỗ trợ dự án giáo dục ở vùng cao và cảm thấy rất ý nghĩa."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="người dùng" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Trần Thị B</h4>
+                            <p>Thành viên từ 2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Ban đầu tôi khá hoài nghi, nhưng sau khi nhận được khoản thanh toán đầu tiên, tôi đã trở thành người hâm mộ cuồng nhiệt của SurveyOn. Dịch vụ khách hàng tuyệt vời!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/api/placeholder/50/50" alt="người dùng" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Lê Văn C</h4>
+                            <p>Thành viên từ 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Câu hỏi thường gặp</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        SurveyOn có thực sự miễn phí không?
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Đúng vậy! SurveyOn hoàn toàn miễn phí. Bạn không bao giờ phải trả tiền để đăng ký hoặc tham gia khảo sát. Thực tế, chúng tôi trả tiền cho BẠN khi bạn hoàn thành khảo sát.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Tôi có thể kiếm được bao nhiêu tiền?
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Thu nhập của bạn phụ thuộc vào số lượng khảo sát bạn hoàn thành và giá trị của mỗi khảo sát. Các thành viên tích cực có thể kiếm được từ vài trăm ngàn đến vài triệu đồng mỗi tháng.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Làm thế nào để rút tiền hoặc quyên góp?
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Bạn có thể quy đổi điểm thưởng theo hai cách: rút tiền thông qua các phương thức thanh toán phổ biến như ngân hàng điện tử, ví điện tử, thẻ quà tặng, hoặc chọn quyên góp cho các tổ chức từ thiện đối tác của chúng tôi. Số điểm tối thiểu để rút hoặc quyên góp là 10.000 điểm (tương đương 100.000 đồng).
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Làm thế nào kiếm thêm điểm nhanh hơn?
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Có nhiều cách để kiếm điểm nhanh hơn: hoàn thành hồ sơ khảo sát đầy đủ để nhận khảo sát phù hợp hơn, tham gia khảo sát hàng ngày, mời bạn bè tham gia (nhận 1,000 điểm cho mỗi người), đăng nhập hàng ngày (50 điểm/ngày), và tham gia vào các thử thách điểm thưởng định kỳ.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Điểm thưởng có hết hạn không?
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Điểm thưởng của bạn có hiệu lực trong 18 tháng kể từ thời điểm bạn kiếm được. Chúng tôi sẽ thông báo cho bạn trước khi điểm sắp hết hạn để bạn có thời gian sử dụng.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div id = "lh"class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về SurveyOn</h3>
+                    <p>SurveyOn là nền tảng khảo sát trực tuyến hàng đầu, kết nối người dùng với các nhà nghiên cứu và thương hiệu lớn để chia sẻ ý kiến và kiếm tiền thưởng.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Cách thức hoạt động</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Hỗ trợ</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Trung tâm hỗ trợ</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Các tổ chức từ thiện đối tác</a></li>
+                        <li><a href="#">Báo cáo tác động xã hội</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <p>Email: info@surveyon.com</p>
+                    <p>Điện thoại: 1900-xxxx-xxx</p>
+                    <p>Địa chỉ: Tòa nhà ABC, 123 Đường XYZ, Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SurveyOn. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="js/script.js"></script>
+
+</body>
+</html>

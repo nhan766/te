@@ -1,0 +1,88 @@
+ <link rel="stylesheet" href="css/khaosat.css">
+<!-- Thêm vào menu điều hướng -->
+<nav class="nav-menu">
+    <ul>
+        <!-- Các mục menu khác -->
+        <li><a href="index_U.html">Quay lại trang chủ</a></li>
+    </ul>
+</nav>
+
+<!-- Thêm section khảo sát -->
+<section id="surveys" class="surveys-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Khảo sát hiện có</h2>
+            <p>Tham gia khảo sát và nhận điểm thưởng ngay</p>
+        </div>
+        
+        <div class="survey-filters">
+            <div class="filter-group">
+                <label>Lọc theo:</label>
+                <select id="survey-category">
+                    <option value="all">Tất cả danh mục</option>
+                    <option value="shopping">Mua sắm</option>
+                    <option value="entertainment">Giải trí</option>
+                    <option value="technology">Công nghệ</option>
+                    <option value="health">Sức khỏe</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Sắp xếp:</label>
+                <select id="survey-sort">
+                    <option value="newest">Mới nhất</option>
+                    <option value="highest-point">Điểm cao nhất</option>
+                    <option value="shortest">Ngắn nhất</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="survey-list">
+            <!-- Danh sách khảo sát sẽ được thêm bằng JavaScript -->
+        </div>
+        
+        <div class="survey-pagination">
+            <button class="pagination-btn" disabled>←</button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">→</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal khảo sát -->
+<div id="survey-modal" class="survey-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="survey-progress">
+            <div class="progress-bar" id="survey-progress"></div>
+            <span id="progress-text">1/10</span>
+        </div>
+        
+        <h2 id="survey-modal-title">Khảo sát về thói quen mua sắm</h2>
+        <p class="survey-points">+100 điểm</p>
+        
+        <div class="survey-content" id="survey-questions">
+            
+        </div>
+        
+        <div class="survey-nav">
+            <button id="prev-question" class="survey-nav-btn" disabled>← Câu trước</button>
+            <button id="next-question" class="survey-nav-btn">Câu tiếp →</button>
+            <button id="submit-survey" class="submit-survey-btn" style="display: none;">Gửi khảo sát</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal hoàn thành khảo sát -->
+<div id="survey-complete-modal" class="survey-complete-modal">
+    <div class="modal-content">
+        <div class="complete-icon">✓</div>
+        <h2>Hoàn thành khảo sát!</h2>
+        <p>Bạn đã nhận được <span id="earned-points">100</span> điểm</p>
+        <p>Cảm ơn bạn đã tham gia khảo sát</p>
+        <button id="close-complete-modal" class="close-complete-btn">Đóng</button>
+    </div>
+</div>
+<script src="js/khaosat.js"></script>

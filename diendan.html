@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="css/diendan.css">
+<section class="community-forum">
+    <div class="container">
+        <div class="section-title">
+            <h2>Cộng đồng SurveyOn</h2>
+            <p>Chia sẻ kinh nghiệm và thảo luận với các thành viên khác</p>
+        </div>
+        
+        <div class="forum-container">
+            <div class="forum-sidebar">
+                <div class="forum-categories">
+                    <h3>Danh mục</h3>
+                    <ul>
+                        <li class="active"><a href="#" data-category="all">Tất cả</a></li>
+                        <li><a href="#" data-category="tips">Mẹo kiếm điểm</a></li>
+                        <li><a href="#" data-category="rewards">Đổi thưởng</a></li>
+                        <li><a href="#" data-category="questions">Câu hỏi</a></li>
+                        <li><a href="#" data-category="feedback">Góp ý</a></li>
+                    </ul>
+                </div>
+                
+                <button class="new-post-button">+ Tạo bài viết mới</button>
+            </div>
+            
+            <div class="forum-posts">
+                <div class="post-search">
+                    <input type="text" placeholder="Tìm kiếm bài viết...">
+                    <button class="search-button">Tìm</button>
+                </div>
+                
+                <div class="posts-list">
+                    <!-- Sẽ được tạo bằng JavaScript -->
+                </div>
+                
+                <div class="forum-pagination">
+                    <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <span>...</span>
+                    <button class="pagination-button">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <script src="js/diendan.js"></script>
+
+
+<!-- New Post Modal -->
+<div class="modal" id="new-post-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Tạo bài viết mới</h2>
+        <form id="new-post-form">
+            <div class="form-group">
+                <label>Tiêu đề</label>
+                <input type="text" id="post-title" required>
+            </div>
+            <div class="form-group">
+                <label>Danh mục</label>
+                <select id="post-category" required>
+                    <option value="tips">Mẹo kiếm điểm</option>
+                    <option value="rewards">Đổi thưởng</option>
+                    <option value="questions">Câu hỏi</option>
+                    <option value="feedback">Góp ý</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nội dung</label>
+                <textarea id="post-content" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Đăng bài</button>
+        </form>
+    </div>
+</div>
+   <script src="js/diendan.js"></script>
