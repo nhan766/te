@@ -79,4 +79,27 @@
 });
 
 
-        
+        // Thêm vào đầu file js/script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Logic cho Menu Mobile ---
+    const menuToggler = document.querySelector('.mobile-menu-toggler');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggler && navMenu) {
+        menuToggler.addEventListener('click', () => {
+            menuToggler.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Tùy chọn: Đóng menu khi nhấp vào một link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggler.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+});
+
