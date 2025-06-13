@@ -896,3 +896,142 @@
             }
         
         }
+/* =================================== */
+/* CSS CHO MENU MOBILE (PHIÊN BẢN SỬA LỖI PC) */
+/* =================================== */
+
+/* Nút bấm (hamburger icon) - mặc định ẩn trên desktop */
+.mobile-menu-toggler {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101; /* Luôn nằm trên cùng */
+}
+
+.mobile-menu-toggler .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* === DÒNG QUAN TRỌNG NHẤT ĐỂ SỬA LỖI === */
+/* Ẩn các nút hành động của người dùng (dành cho mobile) trên màn hình desktop */
+.mobile-user-actions {
+    display: none;
+}
+
+
+/* --- Media Query cho màn hình điện thoại --- */
+/* (Dưới 992px, các quy tắc này sẽ được áp dụng) */
+
+@media (max-width: 992px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Ẩn menu về phía bên phải */
+        width: 280px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 100;
+        transition: right 0.4s ease-in-out;
+        padding-top: 80px;
+        display: block; /* Chuyển về block để hiển thị dạng dọc */
+    }
+
+    .nav-menu.active {
+        right: 0; /* Hiện menu khi có class 'active' */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Các mục menu xếp dọc */
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+
+    .nav-menu ul li {
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .nav-menu ul li a {
+        font-size: 1.1rem;
+    }
+
+    .auth-buttons {
+        display: none; /* Ẩn các nút "Trang cá nhân", "Đăng xuất" GỐC trên mobile */
+    }
+
+    .mobile-menu-toggler {
+        display: flex; /* Hiển thị nút hamburger */
+    }
+
+    /* Hiển thị các nút hành động bên trong menu trượt ra */
+    .mobile-user-actions {
+        display: block;
+        padding: 0 30px;
+        margin-top: 20px;
+    }
+
+    .mobile-user-actions hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+
+    .mobile-user-actions ul {
+        padding: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mobile-user-actions li {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .mobile-user-actions a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .mobile-user-actions .profile-link {
+        background-color: #e9f3fB;
+        color: #2980b9;
+        font-weight: 500;
+    }
+
+    .mobile-user-actions .logout-link {
+        background-color: #fbe9e9;
+        color: #c0392b;
+        font-weight: 500;
+    }
+
+    /* Hiệu ứng nút bấm chuyển thành dấu 'X' */
+    .mobile-menu-toggler.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-menu-toggler.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggler.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

@@ -1,0 +1,163 @@
+/* css/baocao.css */
+:root {
+    --primary-color: #2980b9;
+    --secondary-color: #27ae60;
+    --text-dark: #2c3e50;
+    --bg-light: #f8f9fa;
+    --white: #fff;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+.report-hero {
+    background: linear-gradient(135deg, var(--primary-color), #3498db);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.report-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.report-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.report-metrics {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.report-metrics .container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.metric-card {
+    padding: 20px;
+}
+
+.metric-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.report-projects {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+.section-title p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: var(--text-dark);
+}
+
+.project-category {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-stats {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.report-story {
+    padding: 80px 0;
+    background-color: #eaf2f8;
+}
+
+.report-story .container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.report-story blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--text-dark);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 30px;
+    margin: 0;
+    text-align: left;
+}
+
+.report-story cite {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    text-align: right;
+}
