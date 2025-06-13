@@ -5,36 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurveyOn - Kiếm tiền từ khảo sát trực tuyến</title>
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     <div class="loader"></div>
 
     <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">Survey<span>On</span></div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="diendan.html">Diễn đàn</a></li>
-                    <li><a href="khaosat.html">Khảo sát</a></li>
-                    <li><a href="#dd">Đổi điểm</a></li>
-                    <li><a href="#ct">Cách thức hoạt động</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#lh">Liên hệ</a></li>
-                    
-                </ul>
-            </nav>
-                <div class="auth-buttons">
-                <div class="user-avatar" style="display:flex;align-items:center;gap:10px;">
-                    <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
-                    <span style="font-weight:500;">Xin chào... !</span>
-                </div>
-                <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
-                <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
+   <header>
+    <div class="container nav-container">
+        <div class="logo">Survey<span>ForGood</span></div>
+       <nav class="nav-menu">
+    <ul>
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="diendan.html">Diễn đàn</a></li>
+        <li><a href="khaosat.html">Khảo sát</a></li>
+        <li><a href="doithuong.html">Đổi điểm</a></li>
+        <li><a href="#ct">Cách thức hoạt động</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+
+    <div class="mobile-user-actions">
+        <hr>
+        <ul>
+            <li><a href="trangcanhan.html" class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
+            <li><a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+        </ul>
+    </div>
+</nav>
+        <div class="auth-buttons">
+            <div class="user-avatar" style="display:flex;align-items:center;gap:10px;">
+                <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
+                <span style="font-weight:500;">Xin chào... !</span>
             </div>
+            <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
+            <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
         </div>
-    </header>
+        <button class="mobile-menu-toggler">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -97,103 +110,6 @@
         </div>
     </section>
 
-    <!-- Rewards & Donation Section -->
-    <section id="dd" class="rewards-donation">
-        <div class="container">
-            <div class="section-title">
-                <h2>Đổi điểm thưởng</h2>
-            </div>
-            
-             <div class="rewards-tabs">
-                <div class="tabs-header">
-                    <button class="tab-btn active" data-tab="all-rewards">Tất cả</button>
-                    <button class="tab-btn" data-tab="gift-cards">Thẻ quà tặng</button>
-                    <button class="tab-btn" data-tab="sweepstakes">Quay số trúng thưởng</button>
-                    <button class="tab-btn" data-tab="donations">Quyên góp</button>
-                    <button class="tab-btn" data-tab="subscriptions">Dịch vụ đăng ký</button>
-                </div>
-                
-                <div class="rewards-search">
-                    <input type="text" placeholder="Tìm kiếm phần thưởng...">
-                    <button class="search-btn">Tìm</button>
-                </div>
-                
-                <div class="rewards-grid">
-                    <div class="reward-card">
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ quà tặng" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Thẻ quà tặng Shopee 50K</h3>
-                            <div class="reward-points">5,000 điểm</div>
-                            <button class="redeem-btn">Đổi ngay</button>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ quà tặng" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Thẻ quà tặng Lazada 100K</h3>
-                            <div class="reward-points">10,000 điểm</div>
-                            <button class="redeem-btn">Đổi ngay</button>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card featured">
-                        <div class="reward-tag">Hot</div>
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Microsoft 365" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Microsoft 365 (1 tháng)</h3>
-                            <div class="reward-points">12,000 điểm</div>
-                            <button class="redeem-btn">Đổi ngay</button>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card donation">
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Quyên góp" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Quyên góp cho UNICEF</h3>
-                            <div class="reward-points">Từ 1,000 điểm</div>
-                            <button class="redeem-btn">Quyên góp</button>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Thẻ cào" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Thẻ cào điện thoại 20K</h3>
-                            <div class="reward-points">2,000 điểm</div>
-                            <button class="redeem-btn">Đổi ngay</button>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card sweepstakes">
-                        <div class="reward-image">
-                            <img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Xbox" />
-                        </div>
-                        <div class="reward-info">
-                            <h3>Cơ hội trúng Xbox Series X</h3>
-                            <div class="reward-points">500 điểm/1 lượt</div>
-                            <button class="redeem-btn">Tham gia</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="rewards-pagination">
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">></button>
-                </div>
-            </div>
             
             <div class="rewards-status">
                 <div class="status-card">
@@ -237,7 +153,7 @@
                         <p>Thành viên tham gia quyên góp</p>
                     </div>
                 </div>
-                <a href="#" class="impact-report-link">Xem báo cáo tác động đầy đủ</a>
+                <a href="baocao.html" class="impact-report-link">Xem báo cáo tác động đầy đủ</a>
             </div>
         </div>
     </section>
