@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load user data from localStorage or use default
     const userData = JSON.parse(localStorage.getItem('surveyon_user')) || {
         name: "Nguyễn Văn A",
-        email: "nguyenvana@example.com",
+        email: "nguyenvana@gamil    .com",
         phone: "0987654321",
         birthday: "1990-01-01",
         gender: "male",
@@ -12,35 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
         joinDate: "05/2023",
         level: "silver",
         activities: [
-            {
-                date: "2024-05-15",
-                content: "Hoàn thành khảo sát về thói quen mua sắm (+50 điểm)"
-            },
-            {
-                date: "2024-05-14",
-                content: "Đổi 1000 điểm lấy thẻ quà tặng Shopee"
-            },
-            {
-                date: "2024-05-10",
-                content: "Hoàn thành khảo sát hàng tuần (+100 điểm)"
-            },
-            {
-                date: "2024-05-08",
-                content: "Giới thiệu bạn bè tham gia (+1000 điểm)"
-            }
+            
         ]
     };
-    
-    // Populate profile data
-    document.getElementById('user-name').textContent = userData.name;
-    document.getElementById('input-name').value = userData.name;
-    document.getElementById('input-email').value = userData.email;
-    document.getElementById('input-phone').value = userData.phone;
-    document.getElementById('input-birthday').value = userData.birthday;
-    document.getElementById('input-gender').value = userData.gender;
-    document.getElementById('total-points').textContent = userData.points.toLocaleString();
-    document.getElementById('total-surveys').textContent = userData.surveys;
-    document.getElementById('member-since').textContent = userData.joinDate;
+
     
     // Set level badge
     const levelBadge = document.querySelector('.level-badge');
