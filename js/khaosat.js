@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 3, title: "Lựa chọn Smartphone tiếp theo của bạn", description: "Giúp các hãng điện thoại hiểu rõ hơn...", category: "technology", points: 200, time: "10 phút", questions: [{ question: "Thương hiệu nào bạn tin dùng?", type: "single", options: ["Apple", "Samsung", "Xiaomi", "OPPO"] }, { question: "Bạn quan tâm nhất đến tính năng nào?", type: "multiple", options: ["Camera", "Hiệu năng (Chip)", "Thời lượng pin", "Thiết kế"] }] },
         { id: 4, title: "Thói quen ăn uống và ẩm thực", description: "Chia sẻ về sở thích ẩm thực...", category: "food", points: 100, time: "5 phút", questions: [{ question: "Bạn thường ăn ngoài hay tự nấu?", type: "single", options: ["Chủ yếu ăn ngoài", "Chủ yếu tự nấu", "50/50"] }] },
         { id: 5, "title": "Kế hoạch du lịch trong năm nay", description: "Bạn dự định đi đâu? Chia sẻ kế hoạch...", category: "travel", points: 180, time: "9 phút", questions: [{ question: "Bạn thích du lịch biển hay núi?", type: "single", options: ["Biển", "Núi"] }] },
-        { id: 6, title: "Cân bằng giữa công việc và cuộc sống", description: "Hãy chia sẻ cách bạn quản lý thời gian...", category: "work", points: 250, time: "12 phút", questions: [{ question: "Bạn có làm việc ngoài giờ không?", type: "single", options: ["Thường xuyên", "Thỉnh thoảng", "Không bao giờ"] }] }
+        { id: 6, title: "Cân bằng giữa công việc và cuộc sống", description: "Hãy chia sẻ cách bạn quản lý thời gian...", category: "work", points: 5050, time: "12 phút", questions: [{ question: "Bạn có làm việc ngoài giờ không?", type: "single", options: ["Thường xuyên", "Thỉnh thoảng", "Không bao giờ"] }] }
     ];
 
     // Các biến và đối tượng DOM
