@@ -1,6 +1,16 @@
-/* css/lichsudoithuong.css */
+/* css/lichsudoithuong.css (Phiên bản nâng cấp giao diện) */
+:root {
+    --primary-color: #2980b9;
+    --secondary-color: #27ae60;
+    --danger-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --bg-light: #f8f9fa;
+    --white: #fff;
+    --border-color: #e9ecef;
+}
+
 body {
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
 }
 
 .history-page {
@@ -11,81 +21,106 @@ body {
     text-align: center;
     margin-bottom: 40px;
 }
+.section-title h2 { font-size: 2.5rem; color: var(--text-dark); }
+.section-title p { color: #7f8c8d; }
 
-.section-title h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
+/* Bố cục danh sách các thẻ lịch sử */
+.history-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.history-table-container {
-    background: #fff;
+/* Style cho mỗi thẻ (khung) lịch sử */
+.history-card {
+    background: var(--white);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow-x: auto; /* Giúp bảng có thể cuộn ngang trên màn hình nhỏ */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-left: 5px solid var(--secondary-color); /* Thêm điểm nhấn màu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-thead th {
-    background-color: #f1f3f5;
-    padding: 15px 20px;
-    text-align: left;
-    font-size: 0.9rem;
+.history-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.history-info {
+    flex-grow: 1;
+}
+
+.history-info .reward-title {
+    font-size: 1.2rem;
     font-weight: 600;
-    color: #555;
+    color: var(--text-dark);
+    margin: 0 0 5px 0;
+}
+
+.history-info .reward-date {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.history-details {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    text-align: right;
+    align-items: center;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item .label {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-bottom: 5px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-tbody tr {
-    border-bottom: 1px solid #e9ecef;
-    transition: background-color 0.2s ease;
+.detail-item .reward-points {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--danger-color);
 }
 
-tbody tr:last-child {
-    border-bottom: none;
-}
-
-tbody tr:hover {
-    background-color: #f8f9fa;
-}
-
-tbody td {
-    padding: 15px 20px;
-    vertical-align: middle;
-}
-
-.reward-title {
-    font-weight: 500;
-    color: #2c3e50;
-}
-
-.reward-points {
-    color: #e74c3c; /* Màu đỏ cho điểm trừ */
-    font-weight: 600;
-}
-
-.reward-code {
+.detail-item .reward-code {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #e9ecef;
-    padding: 5px 8px;
+    background-color: var(--border-color);
+    padding: 5px 10px;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    color: var(--text-dark);
 }
 
-.status-badge {
+.detail-item .status-badge {
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     color: #fff;
-}
-
-.status-badge.completed {
-    background-color: #27ae60; /* Màu xanh lá */
+    background-color: var(--secondary-color);
 }
 
 .no-history {
@@ -93,4 +128,23 @@ tbody td {
     padding: 50px;
     font-style: italic;
     color: #7f8c8d;
+    background-color: var(--white);
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .history-details {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-color);
+        justify-content: space-between;
+        text-align: left;
+    }
 }

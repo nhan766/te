@@ -2,39 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sample forum data
     const forumData = {
         posts: [
-            {
-                id: 1,
-                title: "Cách kiếm điểm nhanh nhất cho người mới?",
-                category: "tips",
-                content: "Mình mới tham gia SurveyOn được 1 tuần, có bạn nào có mẹo gì để kiếm điểm nhanh không ạ? Mình cảm ơn nhiều! Hiện tại mình mới chỉ làm các khảo sát cơ bản.",
-                author: "Trần Thị B",
-                avatar: "https://i.pravatar.cc/45?img=5",
-                date: "2024-05-15",
-                comments: 5,
-                likes: 12
-            },
-            {
-                id: 2,
-                title: "Review quá trình đổi thẻ quà tặng Shopee 100K",
-                category: "rewards",
-                content: "Mình vừa đổi thẻ quà tặng Shopee 100k, nhận code ngay sau khi đổi điểm và sử dụng được luôn. Rất hài lòng với tốc độ của hệ thống!",
-                author: "Nguyễn Văn C",
-                avatar: "https://i.pravatar.cc/45?img=8",
-                date: "2024-05-14",
-                comments: 3,
-                likes: 8
-            },
-            {
-                id: 3,
-                title: "Hoàn thành khảo sát nhưng không nhận được điểm?",
-                category: "questions",
-                content: "Mình vừa hoàn thành một khảo sát dài về 'thói quen du lịch' nhưng đợi mãi vẫn chưa thấy điểm được cộng vào tài khoản. Có ai bị giống mình không và phải làm sao ạ?",
-                author: "Lê Thị D",
-                avatar: "https://i.pravatar.cc/45?img=7",
-                date: "2024-05-12",
-                comments: 7,
-                likes: 2
-            }
+            { id: 1, title: "Cách kiếm điểm nhanh nhất cho người mới?", category: "tips", content: "Mình mới tham gia SurveyOn được 1 tuần...", author: "Trần Thị B", avatar: "https://i.pravatar.cc/45?img=5", date: "2024-05-15", comments: 5, likes: 12 },
+            { id: 2, title: "Review quá trình đổi thẻ quà tặng Shopee 100K", category: "rewards", content: "Mình vừa đổi thẻ quà tặng Shopee 100k...", author: "Nguyễn Văn C", avatar: "https://i.pravatar.cc/45?img=8", date: "2024-05-14", comments: 3, likes: 8 },
+            { id: 3, title: "Hoàn thành khảo sát nhưng không nhận được điểm?", category: "questions", content: "Mình vừa hoàn thành một khảo sát dài...", author: "Lê Thị D", avatar: "https://i.pravatar.cc/45?img=7", date: "2024-05-12", comments: 7, likes: 2 }
         ]
     };
     
@@ -42,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let posts = JSON.parse(localStorage.getItem('surveyon_posts')) || forumData.posts;
     
     // Modal elements
+    const postsList = document.querySelector('.posts-list');
     const modal = document.getElementById('new-post-modal');
     const newPostBtn = document.querySelector('.new-post-button');
     const closeModalBtn = document.querySelector('.close-modal');
@@ -49,12 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Display posts
     function displayPosts(filterCategory = 'all') {
-        const postsList = document.querySelector('.posts-list');
         if (!postsList) {
             console.error("Error: '.posts-list' element not found.");
             return;
         }
-
         postsList.innerHTML = '';
         
         const filteredPosts = filterCategory === 'all' 
@@ -75,17 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         filteredPosts.forEach(post => {
             const postDate = new Date(post.date);
-            const dateStr = postDate.toLocaleDateString('vi-VN', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
+            const dateStr = postDate.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
             const categoryInfo = categoryMapping[post.category] || { name: 'Khác', icon: 'fa-solid fa-tag' };
             const contentPreview = post.content.length > 150 ? post.content.substring(0, 150) + "..." : post.content;
             
             const postItem = document.createElement('div');
             postItem.className = 'post-item';
+
+            // CẬP NHẬT: Thêm nút xóa vào mã HTML
             postItem.innerHTML = `
+                <button class="delete-post-btn" data-id="${post.id}" title="Xóa bài viết">&times;</button>
                 <div class="post-header">
                     <img src="${post.avatar}" alt="Avatar" class="post-avatar">
                     <div class="post-author-info">
@@ -105,54 +73,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Filter posts by category
+    // --- THÊM HÀM VÀ SỰ KIỆN XỬ LÝ XÓA BÀI VIẾT ---
+    function handleDeletePost(e) {
+        if (e.target.classList.contains('delete-post-btn')) {
+            const postId = parseInt(e.target.dataset.id);
+            const isConfirmed = confirm('Bạn có chắc chắn muốn xóa bài viết này không?');
+            
+            if (isConfirmed) {
+                posts = posts.filter(post => post.id !== postId);
+                localStorage.setItem('surveyon_posts', JSON.stringify(posts));
+                // Lấy category đang active để hiển thị lại đúng danh sách
+                const activeCategory = document.querySelector('.forum-categories li.active a')?.dataset.category || 'all';
+                displayPosts(activeCategory);
+            }
+        }
+    }
+
+    // Gắn sự kiện click vào cả danh sách để xử lý nút xóa
+    if(postsList) {
+        postsList.addEventListener('click', handleDeletePost);
+    }
+    
+    // Filter posts by category (giữ nguyên)
     document.querySelectorAll('.forum-categories a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const category = this.getAttribute('data-category');
-            
             document.querySelectorAll('.forum-categories li').forEach(li => li.classList.remove('active'));
             this.parentElement.classList.add('active');
-            
             displayPosts(category);
         });
     });
     
-    // Modal handling
+    // Modal handling (giữ nguyên)
     if (newPostBtn && modal && closeModalBtn && postForm) {
-        newPostBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-        });
-        
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-        
-        modal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                modal.classList.remove('active');
-            }
-        });
+        newPostBtn.addEventListener('click', () => modal.classList.add('active'));
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', function(e) { if (e.target === this) modal.classList.remove('active'); });
         
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const userData = JSON.parse(localStorage.getItem('surveyon_user')) || {
-                name: "Người dùng mới",
-                avatar: `https://i.pravatar.cc/45?img=${Math.floor(Math.random() * 70)}`
-            };
-            
-            const newPost = {
-                id: posts.length + 1,
-                title: document.getElementById('post-title').value,
-                category: document.getElementById('post-category').value,
-                content: document.getElementById('post-content').value,
-                author: userData.name,
-                avatar: userData.avatar,
-                date: new Date().toISOString().split('T')[0],
-                comments: 0,
-                likes: 0
-            };
+            const userData = JSON.parse(localStorage.getItem('surveyon_user')) || { name: "Người dùng mới", avatar: `https://i.pravatar.cc/45?img=${Math.floor(Math.random() * 70)}` };
+            const newPost = { id: Date.now(), title: document.getElementById('post-title').value, category: document.getElementById('post-category').value, content: document.getElementById('post-content').value, author: userData.name, avatar: userData.avatar, date: new Date().toISOString().split('T')[0], comments: 0, likes: 0 };
             
             posts.unshift(newPost);
             localStorage.setItem('surveyon_posts', JSON.stringify(posts));
@@ -160,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             postForm.reset();
             modal.classList.remove('active');
             
-            document.querySelector('.forum-categories li.active').classList.remove('active');
+            // Chuyển về tab "Tất cả" và hiển thị lại
+            document.querySelector('.forum-categories li.active')?.classList.remove('active');
             document.querySelector('.forum-categories li:first-child').classList.add('active');
             displayPosts();
             
@@ -168,13 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Intersection Observer for fade-in effect (TỰ QUẢN LÝ) ---
+    // Intersection Observer for fade-in effect (giữ nguyên)
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -183,10 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
+    faders.forEach(fader => appearOnScroll.observe(fader));
 
     // Initial display
     displayPosts();

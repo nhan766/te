@@ -361,3 +361,34 @@ body {
         order: 2;
     }
 }
+.post-item {
+    position: relative;
+}
+
+.delete-post-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f1f3f5;
+    color: #868e96;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.post-item:hover .delete-post-btn {
+    opacity: 1; /* Nút chỉ hiện rõ khi di chuột vào bài viết */
+}
+
+.delete-post-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: scale(1.1) rotate(90deg);
+}

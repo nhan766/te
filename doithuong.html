@@ -1,44 +1,133 @@
-<section class="reward-detail" id="reward-detail" style="display: none;">
-    <div class="container">
-        <button class="back-button" id="back-to-rewards">← Quay lại</button>
-        
-        <div class="reward-detail-container">
-            <div class="reward-detail-image">
-                <img src="" alt="Reward Image" id="detail-reward-image">
-            </div>
-            
-            <div class="reward-detail-info">
-                <h2 id="detail-reward-title">Thẻ quà tặng Shopee 50K</h2>
-                <div class="reward-points" id="detail-reward-points">5,000 điểm</div>
-                
-                <div class="reward-description">
-                    <h3>Mô tả</h3>
-                    <p id="detail-reward-description">Thẻ quà tặng Shopee 50.000đ, sử dụng để mua sắm trên ứng dụng Shopee hoặc website Shopee.vn</p>
-                </div>
-                
-                <div class="reward-terms">
-                    <h3>Điều kiện đổi thưởng</h3>
-                    <ul id="detail-reward-terms">
-                        <li>Tài khoản phải có đủ điểm</li>
-                        <li>Mỗi tài khoản chỉ được đổi tối đa 3 thẻ/tháng</li>
-                        <li>Thẻ có hiệu lực trong 30 ngày kể từ ngày nhận</li>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi điểm thưởng - SurveyOn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/doithuong.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="loader"></div>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Survey<span>ForGood</span></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index_U.html">Trang chủ</a></li>
+                    <li><a href="diendan.html">Diễn đàn</a></li>
+                    <li><a href="khaosat.html">Khảo sát</a></li>
+                    <li><a href="doithuong.html">Đổi điểm</a></li>
+                    <li><a href="lienhe.html">Liên hệ</a></li>
+                </ul>
+                <div class="mobile-user-actions">
+                    <hr>
+                    <ul>
+                        <li><a href="trangcanhan.html" class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
+                        <li><a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
                     </ul>
                 </div>
-                
-                <button class="redeem-now-button" id="redeem-now">Đổi ngay</button>
+            </nav>
+            <div class="auth-buttons">
+                 <div class="user-avatar" style="display:flex;align-items:center;gap:10px;">
+                    <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
+                </div>
+                <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
+                <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
+            </div>
+            <button class="mobile-menu-toggler">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="rewards-page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Đổi điểm thưởng</h2>
+                <p>Sử dụng điểm của bạn để nhận những phần quà hấp dẫn hoặc quyên góp cho các mục đích ý nghĩa.</p>
+            </div>
+
+            <div class="rewards-status">
+                <div class="status-card">
+                    <h3>Điểm khả dụng</h3>
+                    <div class="points-display" id="user-points">0</div>
+                    <p>Điểm sẽ hết hạn: <span>0</span></p>
+                </div>
+                <div class="status-card">
+                    <h3>Cấp bậc thành viên</h3>
+                    <div class="level-display" id="user-level">...</div>
+                    <div class="progress-bar">
+                        <div class="progress" id="user-level-progress" style="width: 0%;"></div>
+                    </div>
+                    <p id="user-level-note"></p>
+                </div>
+                <div class="status-card">
+                    <h3>Hoạt động gần đây</h3>
+                    <ul class="activity-list" id="recent-activity-list"></ul>
+                </div>
+            </div>
+
+            <div class="rewards-tabs">
+                <div class="rewards-grid">
+                    <div class="reward-card" data-id="1" data-title="Thẻ quà tặng Shopee 50K" data-points="5000">
+                        <div class="reward-image"><img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Voucher"/></div>
+                        <div class="reward-info">
+                            <h3>Thẻ quà tặng Shopee 50K</h3>
+                            <div class="reward-points">5,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    <div class="reward-card" data-id="2" data-title="Thẻ quà tặng Lazada 100K" data-points="10000">
+                        <div class="reward-image"><img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Voucher"/></div>
+                        <div class="reward-info">
+                            <h3>Thẻ quà tặng Lazada 100K</h3>
+                            <div class="reward-points">10,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                    <div class="reward-card featured" data-id="3" data-title="Microsoft 365 (1 tháng)" data-points="12000">
+                        <div class="reward-tag">Hot</div>
+                        <div class="reward-image"><img src="image/pngtree-voucher-discount-vector-png-image_4609862.png" alt="Voucher"/></div>
+                        <div class="reward-info">
+                            <h3>Microsoft 365 (1 tháng)</h3>
+                            <div class="reward-points">12,000 điểm</div>
+                            <button class="redeem-btn">Đổi ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rewards-pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal-overlay" id="confirm-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Xác nhận đổi thưởng</h3>
+            <p id="confirm-text"></p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancel-redeem">Hủy bỏ</button>
+                <button class="btn-confirm" id="confirm-redeem">Xác nhận</button>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Popup Thành công -->
-<div class="success-popup" id="success-popup" style="display: none;">
-    <div class="popup-content">
-        <span class="popup-close" id="close-popup">&times;</span>
-        <div class="popup-icon">✓</div>
-        <h2>Đổi thưởng thành công!</h2>
-        <p id="success-message">Bạn đã đổi thành công Thẻ quà tặng Shopee 50K</p>
-        <p>Mã thưởng: <strong id="reward-code">SNXK-AL9M-2J4F</strong></p>
-        <button class="popup-button" id="go-home">Về trang chủ</button>
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="close-success-modal">&times;</span>
+            <div class="success-icon">&#10004;</div>
+            <h3 class="modal-title">Đổi thưởng thành công!</h3>
+            <p>Mã voucher của bạn là:</p>
+            <div class="voucher-code" id="voucher-code-display"></div>
+            <p class="note">Lịch sử đổi thưởng đã được lưu vào trang cá nhân của bạn.</p>
+        </div>
     </div>
-</div>
+    
+    <script src="js/script.js" defer></script>
+    <script src="js/doithuong.js" defer></script>
+</body>
+</html>

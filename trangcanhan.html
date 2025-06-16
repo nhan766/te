@@ -1,70 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân - SurveyForGood</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/trangcanhan.css">
-<section class="user-profile">
-    <div class="container">
-        <div class="profile-header">
-            <div class="profile-avatar">
-                <img src="image/j97.jpg" alt="Avatar" id="user-avatar">
-                <button class="edit-avatar">Đổi ảnh</button>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Survey<span>ForGood</span></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index_U.html">Trang chủ</a></li>
+                    <li><a href="diendan.html">Diễn đàn</a></li>
+                    <li><a href="khaosat.html">Khảo sát</a></li>
+                    <li><a href="doithuong.html">Đổi điểm</a></li>
+                    <li><a href="lienhe.html">Liên hệ</a></li>
+                </ul>
+                <div class="mobile-user-actions">
+                    <hr>
+                    <ul>
+                        <li><a href="trangcanhan.html" class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
+                        <li><a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="auth-buttons">
+                <div class="user-avatar" style="display:flex;align-items:center;gap:10px;">
+                    <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
+                    <span style="font-weight:500;">Xin chào... !</span>
+                </div>
+                <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
+                <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
             </div>
-            <div class="profile-info">
-                <h2 id="user-name">Nguyễn Văn A</h2>
-                <p class="user-level">Thành viên <span class="level-badge silver">Bạc</span></p>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <span class="stat-value" id="total-points">2,450</span>
-                        <span class="stat-label">Điểm tích lũy</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" id="total-surveys">24</span>
-                        <span class="stat-label">Khảo sát đã làm</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" id="member-since">05/2023</span>
-                        <span class="stat-label">Tham gia từ</span>
+            <button class="mobile-menu-toggler">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="user-profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="image/j97.jpg" alt="Avatar" id="user-avatar">
+                    <button class="edit-avatar">Đổi ảnh</button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="user-name">Nguyễn Văn A</h2>
+                    <p class="user-level">Thành viên <span class="level-badge silver">Bạc</span></p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="total-points">2,450</span>
+                            <span class="stat-label">Điểm tích lũy</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="total-surveys">24</span>
+                            <span class="stat-label">Khảo sát đã làm</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="member-since">05/2023</span>
+                            <span class="stat-label">Tham gia từ</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="profile-sections">
-            <div class="profile-section">
-                <h3>Thông tin cá nhân</h3>
-                <form class="profile-form">
-                    <div class="form-group">
-                        <label>Họ và tên</label>
-                        <input type="text" id="input-name" value="Nguyễn Văn A">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" id="input-email" value="nguyenvana@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Số điện thoại</label>
-                        <input type="tel" id="input-phone" value="0987654321">
-                    </div>
-                    <div class="form-group">
-                        <label>Ngày sinh</label>
-                        <input type="date" id="input-birthday" value="1990-01-01">
-                    </div>
-                    <div class="form-group">
-                        <label>Giới tính</label>
-                        <select id="input-gender">
-                            <option value="male">Nam</option>
-                            <option value="female">Nữ</option>
-                            <option value="other">Khác</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="save-button">Lưu thay đổi</button>
-                </form>
             </div>
             
-            <div class="profile-section">
-                <h3>Lịch sử hoạt động</h3>
-    <div class="survey-history-list">
-                   
+            <div class="profile-sections">
+                <div class="profile-section">
+                    <h3>Thông tin cá nhân</h3>
+                    <form class="profile-form">
+                        <div class="form-group"><label>Họ và tên</label><input type="text" id="input-name" value="Nguyễn Văn A"></div>
+                        <div class="form-group"><label>Email</label><input type="email" id="input-email" value="nguyenvana@example.com"></div>
+                        <div class="form-group"><label>Số điện thoại</label><input type="tel" id="input-phone" value="0987654321"></div>
+                        <div class="form-group"><label>Ngày sinh</label><input type="date" id="input-birthday" value="1990-01-01"></div>
+                        <div class="form-group">
+                            <label>Giới tính</label>
+                            <select id="input-gender">
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="save-button">Lưu thay đổi</button>
+                    </form>
+                </div>
+                
+                <div class="profile-section">
+                    <h3>Lịch sử hoạt động</h3>
+                    <div class="survey-history-list">
+                       </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Lịch sử đổi thưởng</h3>
+                    <div id="reward-history-summary">
+                        </div>
+                    <a href="lsdt.html" class="view-all-btn">Xem tất cả lịch sử</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-   <script src="js/trangcamnhan.js"></script>
+    </section>
+    
+    <script src="js/script.js"></script>
+    <script src="js/trangcamnhan.js"></script>
+</body>
+</html>
