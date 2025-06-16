@@ -1,17 +1,10 @@
 // js/trangcamnhan.js
-
-// Hàm chính, chạy khi trang được tải
 document.addEventListener('DOMContentLoaded', function() {
     loadUserDataAndHistories();
     setupEventListeners();
 });
 
-
-/**
- * Tải và hiển thị tất cả thông tin người dùng và các lịch sử liên quan.
- */
 function loadUserDataAndHistories() {
-    // 1. Tải và hiển thị thông tin cá nhân
     const defaultUser = {
         name: "Nguyễn Văn A",
         email: "nguyenvana@example.com",
@@ -24,9 +17,12 @@ function loadUserDataAndHistories() {
         level: "bronze"
     };
     const savedUserData = JSON.parse(localStorage.getItem('surveyon_user')) || {};
-    const userData = { ...defaultUser, ...savedUserData }; // Trộn dữ liệu để chống lỗi 'undefined'
+    const userData = { ...defaultUser, ...savedUserData };
 
-    // Điền thông tin lên giao diện
+    const activities = JSON.parse(localStorage.getItem('survey_activities')) || [];
+    const rewards = JSON.parse(localStorage.getItem('reward_history')) || [];
+
+    // Điền thông tin người dùng
     document.getElementById('user-name').textContent = userData.name;
     document.getElementById('input-name').value = userData.name;
     document.getElementById('input-email').value = userData.email;
@@ -37,26 +33,16 @@ function loadUserDataAndHistories() {
     document.getElementById('total-surveys').textContent = userData.surveys;
     document.getElementById('member-since').textContent = userData.joinDate;
     
-    // Cập nhật huy hiệu
     const levelBadge = document.querySelector('.level-badge');
     if(levelBadge) {
         levelBadge.className = 'level-badge ' + userData.level;
         levelBadge.textContent = userData.level.charAt(0).toUpperCase() + userData.level.slice(1);
     }
     
-    // 2. Tải và hiển thị lịch sử hoạt động (khảo sát)
-    const activities = JSON.parse(localStorage.getItem('survey_activities')) || [];
     displayActivityHistory(activities);
-
-    // 3. Tải và hiển thị lịch sử đổi thưởng
-    const rewards = JSON.parse(localStorage.getItem('reward_history')) || [];
-    displayRewardHistorySummary(rewards);
+    displayRewardHistorySummary(rewards); 
 }
 
-
-/**
- * Hiển thị lịch sử hoạt động (khảo sát)
- */
 function displayActivityHistory(activities) {
     const historyList = document.querySelector('.survey-history-list');
     if (!historyList) return;
@@ -77,7 +63,7 @@ function displayActivityHistory(activities) {
         const points = pointsMatch ? `+${pointsMatch[1]} điểm` : '';
         const contentText = activity.content.replace(/\(\+\d+\s*điểm\)/, '').trim();
 
-        const historyItem = `
+        const historyItemHTML = `
             <div class="survey-history-item">
                 <div>
                     <div class="survey-history-title">${contentText}</div>
@@ -86,26 +72,19 @@ function displayActivityHistory(activities) {
                 <div class="survey-history-points">${points}</div>
             </div>
         `;
-        historyList.innerHTML += historyItem;
+        historyList.innerHTML += historyItemHTML;
     });
 }
 
-/**
- * Hiển thị tóm tắt lịch sử đổi thưởng
- */
 function displayRewardHistorySummary(history) {
     const summaryContainer = document.getElementById('reward-history-summary');
     if (!summaryContainer) return;
-
     summaryContainer.innerHTML = '';
-
     if (history.length === 0) {
         summaryContainer.innerHTML = `<div class="no-reward-history"><p>Bạn chưa đổi thưởng lần nào.</p></div>`;
         return;
     }
-
     const recentHistory = history.slice(0, 3);
-    
     recentHistory.forEach(item => {
         const date = new Date(item.date).toLocaleDateString('vi-VN');
         const historyItemHTML = `
@@ -121,19 +100,13 @@ function displayRewardHistorySummary(history) {
     });
 }
 
-
-/**
- * Gắn các sự kiện cho các nút bấm
- */
 function setupEventListeners() {
-    // Xử lý khi lưu thông tin cá nhân
     const profileForm = document.querySelector('.profile-form');
     profileForm?.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const savedUserData = JSON.parse(localStorage.getItem('surveyon_user')) || {};
         const userData = { ...savedUserData };
-
         userData.name = document.getElementById('input-name').value;
         userData.email = document.getElementById('input-email').value;
         userData.phone = document.getElementById('input-phone').value;
@@ -145,7 +118,6 @@ function setupEventListeners() {
         alert('Thông tin cá nhân đã được cập nhật!');
     });
 
-    // Xử lý khi đổi ảnh đại diện
     const editAvatarBtn = document.querySelector('.edit-avatar');
     editAvatarBtn?.addEventListener('click', function() {
         const input = document.createElement('input');
