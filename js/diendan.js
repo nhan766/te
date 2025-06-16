@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             postItem.innerHTML = `
                 <button class="delete-post-btn" data-id="${post.id}" title="Xóa bài viết">&times;</button>
                 <div class="post-header">
-                    <img src="${post.avatar}" alt="Avatar" class="post-avatar">
+                    <img src="https://i.pravatar.cc/45?u=${post.author}" alt="Avatar" class="post-avatar">
                     <div class="post-author-info">
                         <div class="post-author">${post.author}</div>
                         <div class="post-date">${dateStr}</div>

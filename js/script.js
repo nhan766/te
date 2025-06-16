@@ -1,4 +1,3 @@
-// Sự kiện này đảm bảo tất cả các mã JavaScript sẽ chỉ chạy sau khi toàn bộ cây HTML đã được tải xong.
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Logic cho Menu Mobile ---

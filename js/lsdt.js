@@ -1,4 +1,3 @@
-// js/lichsudoithuong.js
 document.addEventListener('DOMContentLoaded', () => {
     // Thay đổi selector để trỏ đến container mới
     const listContainer = document.getElementById('reward-history-list');

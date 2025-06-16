@@ -1,4 +1,3 @@
-// js/trangcamnhan.js
 document.addEventListener('DOMContentLoaded', function() {
     loadUserDataAndHistories();
     setupEventListeners();
