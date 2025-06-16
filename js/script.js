@@ -134,3 +134,4 @@ window.addEventListener('load', function() {
         }, 500); // Thêm một chút trễ để người dùng kịp thấy loader
     }
 });
+

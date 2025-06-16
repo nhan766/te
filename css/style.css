@@ -136,42 +136,94 @@
         }
         
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #c0392b;
-        }
+       /* Trong file css/style.css */
+
+/* === THAY THẾ TOÀN BỘ KHỐI CSS CHO HERO SECTION BẰNG KHỐI NÀY === */
+
+/* Hero Section */
+.hero {
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Quan trọng để animation nền không bị tràn */
+
+    /* Tạo một gradient lớn hơn kích thước thật và có nhiều màu hơn */
+    background: linear-gradient(135deg, #2980b9, #3498db, #2c3e50, #3498db);
+    background-size: 300% 300%; /* Kích thước nền lớn hơn để có không gian di chuyển */
+    
+    /* Áp dụng animation cho background */
+    animation: animateGradient 15s ease infinite;
+}
+
+/* Định nghĩa animation cho gradient */
+@keyframes animateGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Định nghĩa animation cho các phần tử chữ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Áp dụng animation cho từng phần tử với độ trễ khác nhau */
+.hero h1 {
+    font-size: 2.8rem; /* Tăng kích thước chữ một chút */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    
+    /* Animation xuất hiện */
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; /* Mặc định ẩn đi */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px; /* Tăng khoảng cách */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+
+    /* Animation xuất hiện với độ trễ */
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 35px; /* Tăng kích thước nút */
+    border-radius: 8px; /* Bo tròn hơn */
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    /* Animation xuất hiện với độ trễ */
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px); /* Hiệu ứng nhấc lên khi di chuột */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ================================================================= */
         
         /* Features Section */
         .features {
@@ -1035,3 +1087,5 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+
