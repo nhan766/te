@@ -1,4 +1,3 @@
-// js/diemdanh.js
 document.addEventListener('DOMContentLoaded', () => {
     const calendarGrid = document.getElementById('calendar-grid');
     const currentMonthYearEl = document.getElementById('current-month-year');

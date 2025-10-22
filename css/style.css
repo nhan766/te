@@ -975,7 +975,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* === DÒNG QUAN TRỌNG NHẤT ĐỂ SỬA LỖI === */
 /* Ẩn các nút hành động của người dùng (dành cho mobile) trên màn hình desktop */
 .mobile-user-actions {
     display: none;
