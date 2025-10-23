@@ -16,19 +16,19 @@
         <div class="logo">Survey<span>ForGood</span></div>
        <nav class="nav-menu">
     <ul>
-        <li><a href="index_U.html">Trang chủ</a></li>
-        <li><a href="diendan.html">Diễn đàn</a></li>
-        <li><a href="khaosat.html">Khảo sát</a></li>
-        <li><a href="diemdanh.html">Điểm danh</a></li>
-        <li><a href="doithuong.html">Đổi điểm</a></li>
-        <li><a href="lienhe.html">Liên hệ</a></li>
+        <li><a href="index.php">Trang chủ</a></li>
+        <li><a href="diendan.php">Diễn đàn</a></li>
+        <li><a href="khaosat.php">Khảo sát</a></li>
+        <li><a href="diemdanh.php">Điểm danh</a></li>
+        <li><a href="doithuong.php">Đổi điểm</a></li>
+        <li><a href="lienhe.php">Liên hệ</a></li>
     </ul>
 
     <div class="mobile-user-actions">
         <hr>
         <ul>
-            <li><a href="trangcanhan.html" class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
-            <li><a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+            <li><a href="trangcanhan.php" class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
+            <li><a href="index.php" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
         </ul>
     </div>
 </nav>
@@ -37,7 +37,7 @@
                 <img src="https://i.pravatar.cc/40" alt="Avatar" style="border-radius:50%;width:40px;height:40px;">
                 <span style="font-weight:500;">Xin chào!</span>
             </div>
-            <a href="trangcanhan.html" class="signin" style="margin-left:20px;">Trang cá nhân</a>
+            <a href="trangcanhan.php" class="signin" style="margin-left:20px;">Trang cá nhân</a>
             <a href="index.html" class="signup" style="margin-left:20px;">Đăng xuất</a>
         </div>
         <button class="mobile-menu-toggler">

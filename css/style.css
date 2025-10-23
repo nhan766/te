@@ -32,7 +32,7 @@
   to { transform: rotate(1turn); }
 }
 
-        .fade-in {
+.fade-in {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -42,103 +42,124 @@
     transform: translateY(0);
 }
 
-       
-       html {
-        scroll-behavior: smooth;
-    }
+/* === BẮT ĐẦU CSS CHO STICKY FOOTER === */
+html {
+  height: 100%;
+  box-sizing: border-box; /* Bao gồm padding và border vào kích thước tổng */
+}
+*, *:before, *:after {
+  box-sizing: inherit; /* Áp dụng box-sizing cho mọi thứ */
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* Header */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2980b9;
-        }
-        
-        .logo span {
-            color: #e74c3c;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #2980b9;
-        }
-        
-        .auth-buttons {
-            display: flex;
-            align-items: center;
-        }
-        
-        .auth-buttons a {
-            margin-left: 15px;
-            text-decoration: none;
-        }
-        
-        .login {
-            color: #2980b9;
-            font-weight: 500;
-        }
-        
-        .sg {
-            background-color: #2980b9;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-        
-        /* Hero Section */
-       /* Trong file css/style.css */
+body {
+  position: relative; /* Cần thiết nếu có phần tử con định vị tuyệt đối */
+  margin: 0; /* Đảm bảo không có margin mặc định */
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column; /* Xếp các phần tử con (header, main, footer) theo chiều dọc */
+  min-height: 100vh; /* Đảm bảo body cao ít nhất bằng chiều cao màn hình */
+  /* padding-bottom: 100px; */ /* TÙY CHỌN: Thêm padding nếu footer có chiều cao cố định và bạn dùng position: absolute cho footer. Với flexbox thì thường không cần. */
+  font-size: 16px; /* Chuyển các thuộc tính body gốc vào đây */
+  line-height: 1.6;
+  color: #333;
+}
 
-/* === THAY THẾ TOÀN BỘ KHỐI CSS CHO HERO SECTION BẰNG KHỐI NÀY === */
+main {
+  flex-grow: 1; /* Cho phép <main> giãn ra để chiếm không gian thừa, đẩy footer xuống */
+}
+
+/* Đảm bảo header và footer không bị co lại */
+header, footer {
+  flex-shrink: 0;
+}
+/* === KẾT THÚC CSS CHO STICKY FOOTER === */
+
+/* --- Các CSS còn lại giữ nguyên --- */
+
+html { /* Giữ lại scroll-behavior nếu muốn */
+    scroll-behavior: smooth;
+}
+
+* { /* Các reset khác */
+    /* margin: 0; */ /* Đã có trong body */
+    /* padding: 0; */
+    /* box-sizing: border-box; */ /* Đã có ở trên */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Giữ header dính khi cuộn */
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.logo span {
+    color: #e74c3c;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2980b9;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.login {
+    color: #2980b9;
+    font-weight: 500;
+}
+
+.sg {
+    background-color: #2980b9;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+}
 
 /* Hero Section */
 .hero {
@@ -146,56 +167,39 @@
     padding: 100px 0;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Quan trọng để animation nền không bị tràn */
-
-    /* Tạo một gradient lớn hơn kích thước thật và có nhiều màu hơn */
+    overflow: hidden;
     background: linear-gradient(135deg, #2980b9, #3498db, #2c3e50, #3498db);
-    background-size: 300% 300%; /* Kích thước nền lớn hơn để có không gian di chuyển */
-    
-    /* Áp dụng animation cho background */
+    background-size: 300% 300%;
     animation: animateGradient 15s ease infinite;
 }
 
-/* Định nghĩa animation cho gradient */
 @keyframes animateGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Định nghĩa animation cho các phần tử chữ */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Áp dụng animation cho từng phần tử với độ trễ khác nhau */
 .hero h1 {
-    font-size: 2.8rem; /* Tăng kích thước chữ một chút */
+    font-size: 2.8rem;
     margin-bottom: 20px;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    
-    /* Animation xuất hiện */
     animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0; /* Mặc định ẩn đi */
+    opacity: 0;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 40px; /* Tăng khoảng cách */
+    margin-bottom: 40px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-
-    /* Animation xuất hiện với độ trễ */
     animation: fadeInUp 0.8s ease-out 0.3s forwards;
     opacity: 0;
 }
@@ -204,755 +208,808 @@
     display: inline-block;
     background-color: #e74c3c;
     color: white;
-    padding: 15px 35px; /* Tăng kích thước nút */
-    border-radius: 8px; /* Bo tròn hơn */
+    padding: 15px 35px;
+    border-radius: 8px;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
-    /* Animation xuất hiện với độ trễ */
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
     opacity: 0;
 }
 
 .cta-button:hover {
     background-color: #c0392b;
-    transform: translateY(-3px); /* Hiệu ứng nhấc lên khi di chuột */
+    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* ================================================================= */
-        
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: #2980b9;
-            bottom: 0;
-            left: 25%;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #2980b9;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-        }
-        
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            margin-bottom: 30px;
-        }
-        
-        .step-number {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            background-color: #2980b9;
-            color: white;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-        
-        .step h3 {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .rewards-donation {
-            background-color: #f5f5f5;
-            padding: 80px 0;
-        }
-        
-        .rewards-tabs {
-            margin-bottom: 40px;
-        }
-        
-        .tabs-header {
-            display: flex;
-            background-color: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            flex: 1;
-            text-align: center;
-            color: #666;
-        }
-        
-        .tab-btn.active {
-            background-color: #2980b9;
-            color: white;
-            font-weight: 500;
-        }
-        
-        .rewards-search {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .rewards-search input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
-            font-size: 16px;
-        }
-        
-        .search-btn {
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            padding: 0 25px;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-        
-        .rewards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        
-        .reward-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            position: relative;
-        }
-        
-        .reward-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .reward-tag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e74c3c;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .reward-image {
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        
-        .reward-info {
-            padding: 20px;
-        }
-        
-        .reward-info h3 {
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #333;
-        }
-        
-        .reward-points {
-            color: #2980b9;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        .redeem-btn {
-            width: 100%;
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .redeem-btn:hover {
-            background-color: #3498db;
-        }
-        
-        .reward-card.featured {
-            border: 2px solid #3498db;
-        }
-        
-        .reward-card.donation .redeem-btn {
-            background-color: #27ae60;
-        }
-        
-        .reward-card.donation .redeem-btn:hover {
-            background-color: #2ecc71;
-        }
-        
-        .reward-card.sweepstakes .redeem-btn {
-            background-color: #9b59b6;
-        }
-        
-        .reward-card.sweepstakes .redeem-btn:hover {
-            background-color: #8e44ad;
-        }
-        
-        .rewards-pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .pagination-btn {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: none;
-            border: 1px solid #ddd;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        
-        .pagination-btn.active {
-            background-color: #2980b9;
-            color: white;
-            border-color: #2980b9;
-        }
-        
-        .rewards-status {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .status-card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .status-card h3 {
-            margin-bottom: 15px;
-            color: #333;
-            font-size: 18px;
-        }
-        
-        .points-display {
-            font-size: 36px;
-            font-weight: bold;
-            color: #2980b9;
-            margin-bottom: 10px;
-        }
-        
-        .level-display {
-            font-size: 28px;
-            font-weight: bold;
-            color: #2980b9;
-            margin-bottom: 10px;
-        }
-        
-        .progress-bar {
-            height: 10px;
-            background-color: #eee;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            background-color: #2980b9;
-        }
-        
-        .activity-list {
-            list-style: none;
-        }
-        
-        .activity-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-        
-        .activity-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .activity-list li span {
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .activity-list li span:first-child {
-            color: #27ae60;
-        }
-        
-        .activity-list li span:first-child:contains('-') {
-            color: #e74c3c;
-        }
-        
-        .donation-impact {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .donation-impact h3 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 22px;
-        }
-        
-        .impact-stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .impact-item {
-            padding: 15px;
-        }
-        
-        .impact-number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 5px;
-        }
-        
-        .impact-report-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .impact-report-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            background-color: #f9f9f9;
-            padding: 80px 0;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-        
-        .author-info p {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        /* FAQ Section */
-        .faq {
-            padding: 80px 0;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 500;
-            color: #2c3e50;
-            background-color: #f5f5f5;
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s, padding 0.3s;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 200px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-            padding-right: 20px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 2px;
-            background-color: #3498db;
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-column p {
-            margin-bottom: 15px;
-            color: #bdc3c7;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: #3498db;
-        }
-        
-        .social-links {
-            display: flex;
-            margin-top: 15px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: #34495e;
-            border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: #3498db;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #34495e;
-            color: #bdc3c7;
-            font-size: 0.9rem;
-        }
-        
-        /* Ways to Earn Section */
-        .ways-to-earn {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-        
-        .earn-methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        
-        .earn-method-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        
-        .earn-method-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .earn-method-icon {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .earn-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e74c3c;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .featured-earn {
-            border: 2px solid #3498db;
-        }
-        
-        .level-benefits {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-        
-        .level-benefits h3 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.5rem;
-            color: #2c3e50;
-        }
-        
-        .level-table {
-            display: table;
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .level-header, .level-row {
-            display: table-row;
-        }
-        
-        .level-cell {
-            display: table-cell;
-            padding: 15px;
-            border: 1px solid #ddd;
-            vertical-align: middle;
-        }
-        
-        .level-header .level-cell {
-            font-weight: bold;
-            background-color: #f5f5f5;
-        }
-        
-        .level-name {
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .bronze {
-            color: #cd7f32;
-        }
-        
-        .silver {
-            color: #c0c0c0;
-        }
-        
-        .gold {
-            color: #ffd700;
-        }
-        
-        .level-cell ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-        
-        .level-cell li {
-            margin-bottom: 8px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .feature-card, .testimonial-card {
-                margin-bottom: 20px;
-            }
-            
-            .steps {
-                flex-direction: column;
-            }
-            
-            .step {
-                margin-bottom: 30px;
-            }
-            
-            .rewards-grid, .earn-methods-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .level-table, .level-header, .level-row, .level-cell {
-                display: block;
-            }
-            
-            .level-cell {
-                padding: 10px;
-            }
-            
-            .footer-column {
-                min-width: 100%;
-                padding-right: 0;
-            }
-        
-        }
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #2980b9;
+    bottom: 0;
+    left: 25%;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 80px 0;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.rewards-donation {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.rewards-tabs {
+    margin-bottom: 40px;
+}
+
+.tabs-header {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    text-align: center;
+    color: #666;
+}
+
+.tab-btn.active {
+    background-color: #2980b9;
+    color: white;
+    font-weight: 500;
+}
+
+.rewards-search {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.rewards-search input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.reward-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+}
+
+.reward-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.reward-image {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+/* Thêm style để ảnh không quá lớn trong thẻ reward */
+.reward-image img {
+    max-height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+.reward-info {
+    padding: 20px;
+}
+
+.reward-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    /* Giới hạn số dòng cho tiêu đề */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Số dòng tối đa */
+    -webkit-box-orient: vertical;
+    min-height: 2.4em; /* Chiều cao tối thiểu = line-height * số dòng */
+}
+
+.reward-points {
+    color: #2980b9;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.redeem-btn {
+    width: 100%;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.redeem-btn:hover {
+    background-color: #3498db;
+}
+
+.redeem-btn:disabled { /* Style cho nút khi không đủ điểm */
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+
+.reward-card.featured {
+    border: 2px solid #3498db;
+}
+
+.reward-card.donation .redeem-btn {
+    background-color: #27ae60;
+}
+
+.reward-card.donation .redeem-btn:hover {
+    background-color: #2ecc71;
+}
+
+.reward-card.sweepstakes .redeem-btn {
+    background-color: #9b59b6;
+}
+
+.reward-card.sweepstakes .redeem-btn:hover {
+    background-color: #8e44ad;
+}
+
+.rewards-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333; /* Thêm màu chữ mặc định */
+    text-decoration: none; /* Bỏ gạch chân nếu là thẻ a */
+}
+.pagination-btn:hover:not(.active) { /* Thêm hover */
+    background-color: #eee;
+}
+
+
+.pagination-btn.active {
+    background-color: #2980b9;
+    color: white;
+    border-color: #2980b9;
+}
+
+.rewards-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.status-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.status-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+}
+
+.points-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.level-display {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #2980b9;
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    /* display: flex; */ /* Bỏ flex đi để text dài tự xuống dòng */
+    /* align-items: center; */
+    font-size: 0.9em; /* Giảm font size một chút */
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-list li span {
+    display: inline-block;
+    margin-right: 8px; /* Giảm margin */
+    font-weight: bold;
+    min-width: 30px; /* Đảm bảo khoảng cách đều */
+    text-align: right;
+}
+
+/* Style riêng cho điểm +/- */
+.activity-list li span.points-pos { color: #27ae60; }
+.activity-list li span.points-neg { color: #e74c3c; }
+
+
+.donation-impact {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.donation-impact h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.impact-item {
+    padding: 15px;
+    min-width: 150px; /* Đảm bảo không quá sát nhau */
+}
+
+.impact-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 5px;
+}
+
+.impact-report-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.impact-report-link:hover {
+    text-decoration: underline;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555; /* Thêm màu */
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: #ddd; */ /* Bỏ màu nền */
+    margin-right: 15px;
+    overflow: hidden;
+}
+.author-avatar img { /* Đảm bảo ảnh hiển thị đúng */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.author-info h4 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.author-info p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 80px 0;
+}
+.faq-list { /* Thêm class này bao ngoài các faq-item */
+    max-width: 800px; /* Giới hạn chiều rộng */
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px; /* Giảm margin */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Giảm shadow */
+    overflow: hidden;
+    border: 1px solid #eee; /* Thêm border nhẹ */
+}
+
+.faq-question {
+    padding: 15px 20px; /* Điều chỉnh padding */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600; /* Tăng đậm */
+    color: #333; /* Đổi màu */
+    /* background-color: #f9f9f9; */ /* Bỏ màu nền */
+    transition: background-color 0.2s;
+}
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+
+.faq-question .arrow { /* Style cho dấu mũi tên/cộng */
+    font-size: 1.2em;
+    transition: transform 0.3s;
+    font-weight: normal;
+    color: #888;
+}
+
+.faq-item.active .faq-question .arrow {
+    transform: rotate(45deg);
+    color: #2980b9;
+}
+
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Sửa transition */
+    color: #555; /* Thêm màu */
+    line-height: 1.7; /* Tăng line-height */
+    background-color: #fff; /* Đảm bảo nền trắng */
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 300px; /* Tăng max-height */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #bdc3c7; /* Đổi màu chữ mặc định */
+    padding: 50px 0 20px;
+    font-size: 0.95em; /* Giảm font-size chung */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px; /* Thêm gap */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px; /* Giảm min-width */
+    margin-bottom: 20px; /* Giảm margin */
+    padding-right: 15px; /* Giảm padding */
+}
+
+.footer-column h3 {
+    font-size: 1.1rem; /* Giảm font-size */
+    margin-bottom: 15px; /* Giảm margin */
+    position: relative;
+    padding-bottom: 8px; /* Giảm padding */
+    color: #fff; /* Tăng độ sáng tiêu đề */
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #3498db;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-column p {
+    margin-bottom: 10px; /* Giảm margin */
+    line-height: 1.7; /* Tăng line-height */
+}
+/* Style icon trong contact info */
+.footer-column p i {
+    margin-right: 8px;
+    color: #3498db;
+    width: 15px; /* Đảm bảo icon thẳng hàng */
+    text-align: center;
+}
+
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Giảm margin */
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+.social-links {
+    display: flex;
+    margin-top: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Giảm kích thước */
+    height: 32px; /* Giảm kích thước */
+    background-color: #34495e;
+    border-radius: 50%;
+    margin-right: 8px; /* Giảm margin */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 0.9em; /* Giảm font-size icon nếu cần */
+}
+
+.social-link:hover {
+    background-color: #3498db;
+}
+/* Cần Font Awesome */
+.social-link i { line-height: 32px; } /* Căn giữa icon */
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    color: #95a5a6; /* Giảm độ sáng */
+    font-size: 0.85rem; /* Giảm font-size */
+}
+
+/* Ways to Earn Section */
+.ways-to-earn {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.earn-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.earn-method-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Thêm shadow transition */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    border: 1px solid #eee; /* Thêm border */
+}
+
+.earn-method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Tăng shadow khi hover */
+}
+
+
+.earn-method-icon {
+    font-size: 36px;
+    margin-bottom: 15px; /* Giảm margin */
+    color: #3498db; /* Thêm màu */
+}
+
+.earn-method-card h3 { /* Thêm style cho title */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.earn-method-card p { /* Thêm style cho text */
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+.earn-method-card p strong { /* Style cho điểm */
+    color: #27ae60;
+}
+
+
+.earn-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.featured-earn {
+    border: 2px solid #3498db;
+}
+
+.level-benefits {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee; /* Thêm border */
+}
+
+.level-benefits h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.level-table {
+    /* display: table; */ /* Bỏ display table để responsive tốt hơn */
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Cho phép cuộn ngang trên mobile */
+    display: block; /* Thành block để cuộn */
+}
+/* Style lại table để giống bảng hơn */
+.level-table table { width: 100%; }
+.level-table th, .level-table td {
+    padding: 12px 15px; /* Điều chỉnh padding */
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    text-align: left; /* Căn trái mặc định */
+}
+.level-table thead th { /* Header */
+    font-weight: bold;
+    background-color: #f5f5f5;
+    text-align: center; /* Căn giữa header */
+}
+.level-table tbody td.level-name { /* Cột tên level */
+    font-weight: bold;
+    text-align: center;
+}
+.level-table ul { margin: 0; padding-left: 18px; }
+.level-table li { margin-bottom: 5px; font-size: 0.95em; color: #555;}
+
+
+.bronze { color: #cd7f32; }
+.silver { color: #95a5a6; } /* Đổi màu silver */
+.gold { color: #f1c40f; } /* Đổi màu gold */
+
+
+/* Responsive */
+@media (max-width: 992px) {
+     /* CSS mobile menu đã có */
+}
+
+@media (max-width: 768px) {
+    /* .nav-menu { display: none; } */ /* Đã xử lý trong CSS mobile menu */
+    .hero h1 { font-size: 2.2rem; } /* Điều chỉnh size */
+    .hero p { font-size: 1.1rem; }
+    .feature-card, .testimonial-card { margin-bottom: 25px; } /* Tăng margin */
+    .steps { flex-direction: column; }
+    .step { margin-bottom: 35px; } /* Tăng margin */
+    .rewards-grid, .earn-methods-grid { grid-template-columns: 1fr; }
+
+    /* .level-table, .level-header, .level-row, .level-cell { display: block; } */ /* Bỏ đi vì đã style lại table */
+    /* .level-cell { padding: 10px; } */
+
+    .footer-column { min-width: 100%; padding-right: 0; }
+    .footer-content { gap: 10px; } /* Giảm gap footer */
+}
+
+
 /* =================================== */
-/* CSS CHO MENU MOBILE (PHIÊN BẢN SỬA LỖI PC) */
+/* CSS CHO MENU MOBILE */
 /* =================================== */
 
-/* Nút bấm (hamburger icon) - mặc định ẩn trên desktop */
 .mobile-menu-toggler {
     display: none;
     flex-direction: column;
@@ -963,7 +1020,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 101; /* Luôn nằm trên cùng */
+    z-index: 1001; /* Luôn trên cùng */
 }
 
 .mobile-menu-toggler .bar {
@@ -975,116 +1032,85 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Ẩn các nút hành động của người dùng (dành cho mobile) trên màn hình desktop */
 .mobile-user-actions {
-    display: none;
+    display: none; /* Ẩn trên desktop */
 }
 
-
-/* --- Media Query cho màn hình điện thoại --- */
-/* (Dưới 992px, các quy tắc này sẽ được áp dụng) */
-
 @media (max-width: 992px) {
-    .nav-container {
-        justify-content: space-between;
-    }
+    .nav-container { justify-content: space-between; }
 
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%; /* Ẩn menu về phía bên phải */
+        right: -100%; /* Bắt đầu ẩn */
         width: 280px;
         height: 100vh;
         background-color: #fff;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        z-index: 100;
+        z-index: 1000; /* Dưới nút toggler */
         transition: right 0.4s ease-in-out;
-        padding-top: 80px;
-        display: block; /* Chuyển về block để hiển thị dạng dọc */
+        padding-top: 70px; /* Giảm padding */
+        display: flex; /* Dùng flex */
+        flex-direction: column; /* Xếp dọc */
+        overflow-y: auto; /* Cho phép cuộn nếu menu dài */
     }
 
-    .nav-menu.active {
-        right: 0; /* Hiện menu khi có class 'active' */
-    }
+    .nav-menu.active { right: 0; }
 
     .nav-menu ul {
-        flex-direction: column; /* Các mục menu xếp dọc */
-        align-items: flex-start;
-        padding: 0 30px;
-    }
-
-    .nav-menu ul li {
-        margin: 15px 0;
-        width: 100%;
-    }
-    
-    .nav-menu ul li a {
-        font-size: 1.1rem;
-    }
-
-    .auth-buttons {
-        display: none; /* Ẩn các nút "Trang cá nhân", "Đăng xuất" GỐC trên mobile */
-    }
-
-    .mobile-menu-toggler {
-        display: flex; /* Hiển thị nút hamburger */
-    }
-
-    /* Hiển thị các nút hành động bên trong menu trượt ra */
-    .mobile-user-actions {
-        display: block;
-        padding: 0 30px;
-        margin-top: 20px;
-    }
-
-    .mobile-user-actions hr {
-        border: none;
-        border-top: 1px solid #eee;
-        margin-bottom: 10px;
-    }
-
-    .mobile-user-actions ul {
-        padding: 0;
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .mobile-user-actions li {
+        padding: 0 25px; /* Giảm padding */
         width: 100%;
-        margin: 10px 0;
-    }
-    
-    .mobile-user-actions a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 10px 15px;
-        border-radius: 8px;
-        transition: background-color 0.3s, color 0.3s;
     }
 
-    .mobile-user-actions .profile-link {
-        background-color: #e9f3fB;
-        color: #2980b9;
-        font-weight: 500;
+    .nav-menu ul li { margin: 12px 0; width: 100%; } /* Giảm margin */
+    .nav-menu ul li a { font-size: 1rem; } /* Giảm font-size */
+
+    .auth-buttons { display: none; } /* Ẩn nút gốc trên mobile */
+    .mobile-menu-toggler { display: flex; } /* Hiện nút hamburger */
+
+    .mobile-user-actions {
+        display: block; /* Hiện trong menu mobile */
+        padding: 0 25px; /* Đồng bộ padding */
+        margin-top: auto; /* Đẩy xuống dưới cùng */
+        padding-bottom: 20px; /* Thêm padding dưới */
     }
 
-    .mobile-user-actions .logout-link {
-        background-color: #fbe9e9;
-        color: #c0392b;
-        font-weight: 500;
-    }
+    .mobile-user-actions hr { border: none; border-top: 1px solid #eee; margin: 15px 0; } /* Điều chỉnh hr */
+    .mobile-user-actions ul { padding: 0; flex-direction: column; align-items: flex-start; }
+    .mobile-user-actions li { width: 100%; margin: 8px 0; } /* Giảm margin */
+    .mobile-user-actions a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px; transition: background-color 0.3s, color 0.3s; font-size: 0.95rem; } /* Điều chỉnh style link */
 
-    /* Hiệu ứng nút bấm chuyển thành dấu 'X' */
-    .mobile-menu-toggler.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .mobile-menu-toggler.active .bar:nth-child(2) {
+    .mobile-user-actions .profile-link { background-color: #e9f3fB; color: #2980b9; font-weight: 500; }
+    .mobile-user-actions .profile-link:hover { background-color: #d4e6f1; } /* Thêm hover */
+
+    .mobile-user-actions .logout-link { background-color: #fdedec; color: #c0392b; font-weight: 500; } /* Đổi màu nền logout */
+     .mobile-user-actions .logout-link:hover { background-color: #f5b7b1; } /* Thêm hover */
+
+
+    /* Hiệu ứng nút X */
+    .mobile-menu-toggler.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .mobile-menu-toggler.active .bar:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggler.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Lớp phủ mờ khi menu mở */
+    body.mobile-menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 999; /* Dưới menu */
         opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s, visibility 0.4s;
     }
-    .mobile-menu-toggler.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    body.mobile-menu-open.menu-active::before { /* Thêm class menu-active khi menu thực sự mở */
+        opacity: 1;
+        visibility: visible;
     }
+
 }
-
-
