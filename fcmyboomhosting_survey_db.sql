@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2025 at 01:58 AM
+-- Generation Time: Oct 23, 2025 at 02:10 AM
 -- Server version: 10.6.19-MariaDB-cll-lve-log
 -- PHP Version: 8.2.21
 
@@ -62,6 +62,22 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`client_id`, `company_name`, `contact_email`, `password_hash`, `is_active`, `created_at`) VALUES
 (1, 'Sample Company A', 'client_a@example.com', '$2y$10$H6mhtCs2kgs802uzKBLTZ.ESP36k6NpmoAbDKdU2TTsnvYpGlNBue', 1, '2025-10-22 18:46:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_posts`
+--
+
+CREATE TABLE `forum_posts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -429,6 +445,13 @@ ALTER TABLE `clients`
   ADD UNIQUE KEY `contact_email` (`contact_email`);
 
 --
+-- Indexes for table `forum_posts`
+--
+ALTER TABLE `forum_posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `options`
 --
 ALTER TABLE `options`
@@ -520,6 +543,12 @@ ALTER TABLE `clients`
   MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `forum_posts`
+--
+ALTER TABLE `forum_posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
@@ -582,6 +611,12 @@ ALTER TABLE `user_responses`
 --
 ALTER TABLE `checkin_history`
   ADD CONSTRAINT `checkin_history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `forum_posts`
+--
+ALTER TABLE `forum_posts`
+  ADD CONSTRAINT `forum_posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `options`
